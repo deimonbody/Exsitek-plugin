@@ -1,0 +1,25 @@
+{
+    "name": "Exsitek Plugin",
+    "description": "The plugin was created by Dmytro",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["storage","activeTab","scripting","declarativeContent","tabs","activeTab"],
+    "action": {
+        "default_popup": "index.html"
+    },
+    "content_scripts":[
+        {
+            "js":["contentScript.js"],
+            "matches":["<all_urls>"],
+            "css":["style.css"]
+        }
+    ],
+    "icons": { 
+        "16": "icon-16.png",
+        "48": "icon-48.png",
+        "128": "icon-128.png" 
+    }
+}
