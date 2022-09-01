@@ -16,4 +16,16 @@ export interface IPopUp {
     replacments: string[];
     choseChange: (word: string) => void;
     activeItemID: number;
+    cursorPosition:ICursorPointer
+}
+
+export interface IMatchResult {
+    spaceIndex?:number,
+    wordIndex?:number,
+    wordToChange?:string;
+}
+
+export interface ICursorPointer {
+    x:number;
+    y:number;
 }

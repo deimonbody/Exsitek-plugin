@@ -7,6 +7,7 @@ export const popupChanges = async ({
     replacments,
     choseChange,
     activeItemID,
+    cursorPosition
 }: IPopUp) => {
    
     const container = createElement({tagName: 'div',classList: 'popup-change'});
@@ -57,6 +58,9 @@ export const popupChanges = async ({
     container.appendChild(secondChangeColor);
     container.appendChild(thirdChangeColor);
     container.appendChild(wordsContainer);
+    container.style.top = `${cursorPosition.y}px`;
+    container.style.left = `${cursorPosition.x}px`;
+
     return {
         container,
         wordsContainerElements:wordsContainer.querySelectorAll('.changeWordVariant')
